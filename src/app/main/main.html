@@ -1,0 +1,28 @@
+<div layout="vertical" layout-fill>
+
+  <header ng-include="'components/navbar/navbar.html'"></header>
+
+  <md-content>
+    <section class="jumbotron">
+      <h1>POE Guild Mate</h1>
+      <p class="lead">        
+        Helps you find out if your guild members are active.
+      </p>      
+    </section>
+
+    <div class="container" layout-align="center">
+      <table class="table table-striped">
+        <thead>
+          <th>Name</th>
+          <th>Last Logged In</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users | orderBy: 'LastLogin'">
+            <td>{{user.Name}}</td>
+            <td>{{user.LastLogin | date : 'medium'}}</td>
+          </tr>
+        </tbody>
+      </table> 
+    </div>
+  </md-content>
+</div>
